@@ -1,6 +1,7 @@
 import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     display: flex;
@@ -78,6 +79,11 @@ const Right = styled.div`
     ${mobile({ backgroundColor: "#fff8f8" })}
 
 `;
+const linkStyle = {
+    textDecoration: "none",
+    color:  "black",
+    fontWeight: "500"
+};
 
 const ContactItem = styled.div`
     margin-bottom: 20px;
@@ -120,8 +126,8 @@ const Footer = () => {
             <Center>
                 <Title>Useful Links</Title>
                 <List>
-                    <ListItem>Home</ListItem>
-                    <ListItem>Cart</ListItem>
+                    <ListItem><Link to="/" style={linkStyle}>Home</Link></ListItem>
+                    <ListItem><Link to="cart" style={linkStyle}>Cart</Link></ListItem>
                     <ListItem>Men's Fashion</ListItem>
                     <ListItem>Women's Fashion</ListItem>
                     <ListItem>Accessories</ListItem>

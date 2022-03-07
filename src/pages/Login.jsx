@@ -5,12 +5,12 @@ import { mobile } from "../responsive";
 const Container = styled.div`
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(
+    /* background: linear-gradient(
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
         ),
         url("https://i.ibb.co/6R0FdT2/unsplash1.jpg"),
-         center;
+         center; */
         background-size: cover;
 
         display: flex;

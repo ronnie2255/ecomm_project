@@ -1,8 +1,11 @@
 import { Badge } from '@material-ui/core';
-import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from "react-router-dom";
+//import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import React from 'react';
-import styled from 'styled-components';
 import { mobile } from '../responsive';
+import styled from "styled-components";
 
 
 const Container = styled.div`
@@ -68,6 +71,13 @@ const MenuItem = styled.div`
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
+const linkStyle = {
+    textDecoration: "none",
+    color:  "black",
+    fontWeight: "700"
+};
+
+
 const Navbar = () => {
     return (
         <Container >
@@ -76,17 +86,17 @@ const Navbar = () => {
                     <Language>EN</Language>
                     <SearchContainer>
                         <Input placeholder="Search"/>
-                        <Search style={{color:"gray", fontSize:16}}/>
+                        <SearchOutlinedIcon style={{color:"gray", fontSize:16}}/>
                         
                     </SearchContainer>
                 </Left>
                 <Center><Logo>VAGABOND.</Logo></Center>
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
+                    <MenuItem><Link to="register" style={linkStyle}>REGISTER</Link></MenuItem>
+                    <MenuItem><Link to="login" style={linkStyle}>SIGN IN</Link></MenuItem>
                     <MenuItem>
                     <Badge badgeContent={4} color="primary">
-                        <ShoppingCartOutlined/>
+                        <Link to="cart" style={linkStyle}><ShoppingCartOutlinedIcon/></Link>
                     </Badge>
 
                     </MenuItem>

@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import { sliderItems } from "../data";
@@ -87,6 +87,12 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
+const linkStyle = {
+    textDecoration: "none",
+    color:  "black",
+    fontWeight: "500"
+};
+
 const Slider = () => {
 
         const [slideIndex, setSlideIndex] = useState(0);
@@ -114,7 +120,7 @@ const Slider = () => {
                     <InfoContainer>
                         <Title>{item.title}</Title>
                         <Desc>{item.desc}</Desc>
-                        <Button>SHOP NOW</Button>
+                        <Button><Link to="ProductList" style={linkStyle}>SHOP NOW</Link></Button>
                     </InfoContainer>
                 </Slide>
               ))}
